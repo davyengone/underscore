@@ -47,4 +47,17 @@ var _ = {};
 
 		return result;
 	}
+
+
+	_.filter = function(collection, iterator){
+		var results = [];
+
+		_.each(collection, function(item){
+			if(iterator(item)){
+				results.push(item);
+			}
+		});
+		
+		return results;
+	}
 }(this))
