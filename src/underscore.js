@@ -60,4 +60,21 @@ var _ = {};
 		
 		return results;
 	}
+
+	_.reject = function(collection, iterator){
+		// var results = [];
+
+		// _.each(collection,function(item){
+		// 	if (!iterator(item)) {
+		// 		results.push(item);
+		// 	}
+		// });
+		// return results;
+
+
+		return _.filter(collection, function(item){
+			return !iterator(item);
+		});
+	}
+
 }(this))
