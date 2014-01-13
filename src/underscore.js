@@ -122,4 +122,15 @@ var _ = {};
 	 	return accumulator;
 	}
 
+	_.contains = function(collection, target){
+		var found = false;
+		_.each(collection, function(item){
+			if (item === target) {
+				found = true;
+			}
+		});
+
+		return found;
+	}
+
 }(this))
