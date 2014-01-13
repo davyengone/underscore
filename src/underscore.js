@@ -62,19 +62,30 @@ var _ = {};
 	}
 
 	_.reject = function(collection, iterator){
-		// var results = [];
-
-		// _.each(collection,function(item){
-		// 	if (!iterator(item)) {
-		// 		results.push(item);
-		// 	}
-		// });
-		// return results;
-
-
 		return _.filter(collection, function(item){
 			return !iterator(item);
 		});
+	}
+
+	_.uniq = function(collection){
+		var results = [];
+
+		results[0] = collection[0];
+		for (var i = 1; i < collection.length; i++) {
+			var item = collection[i], found = false;
+			for (var k = 0; k < results.length; k++) {
+				if (results[k] === item) {
+					found = true;
+					break;
+				}
+			};
+
+			if (!found) {
+				results.push(item);
+			}
+		};
+
+		return results;
 	}
 
 }(this))
