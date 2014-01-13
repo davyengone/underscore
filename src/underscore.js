@@ -114,5 +114,12 @@ var _ = {};
 		});
 	}
 
+	_.reduce = function(collection, iterator, accumulator){
+	 	_.each(collection, function(item){
+	 		accumulator = iterator(accumulator, item);
+	 	});
+
+	 	return accumulator;
+	}
 
 }(this))
