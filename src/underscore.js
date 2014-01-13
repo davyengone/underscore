@@ -97,4 +97,10 @@ var _ = {};
 		return results;
 	}
 
+	_.pluck = function(collection, key){
+		return _.map(collection, function(item){
+			return item[key];
+		});
+	}
+
 }(this))
