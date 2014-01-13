@@ -103,4 +103,16 @@ var _ = {};
 		});
 	}
 
+	_.invoke = function(collection, iteratorOrKey){
+		return _.map(collection, function(item){
+			if ("function" === typeof iteratorOrKey) {
+				return iteratorOrKey.call(item);
+			}
+			else{
+				return item[iteratorOrKey]();
+			}
+		});
+	}
+
+
 }(this))
