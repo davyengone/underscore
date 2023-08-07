@@ -16,5 +16,8 @@
   "license": "MIT",
   "devDependencies": {
     "vitest": "^0.34.1"
+  },
+  "dependencies": {
+    "sinon": "^15.2.0"
   }
 }
